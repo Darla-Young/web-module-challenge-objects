@@ -165,10 +165,19 @@ Use the getReviewsByRating function below to do the following:
   ]
 */
 
- function getReviewByRating(/* code here */) {
-    /* code here */
-  }
+function getReviewByRating(array, rating) {
+  let selection = [];
+  array.forEach((item) => {
+    if(item.rating >= rating) {
+      if (item.rating < rating + 1) {
+        selection.push(item);
+      }
+    }
+  });
+  return selection;
+}
 
+console.log("stretch 1: ", getReviewByRating(reviews, 4))
   
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪💪   
 Use the getLongReviews function below to do the following:
