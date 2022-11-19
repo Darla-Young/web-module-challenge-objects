@@ -223,11 +223,17 @@ Use the carMaker function below to do the following:
 */
 
 
-function carMaker(/* code here */) {
-    /* code here */
-    
+function carMaker(miles) {
+  this.miles = miles,
+  this.drive = ((distance) => {
+    this.miles = miles + distance;
+    return this.miles;
+  })
 }
 
+const car1 = new carMaker(10);
+
+console.log(car1.drive(100));
 
 /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
 function foo(){
